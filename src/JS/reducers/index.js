@@ -1,10 +1,9 @@
-import { combineReducers } from "redux";
-import counterReducer from "./counterReducer";
+import { createStore } from "redux";
+import rootReducer from "../reducers";
 
+const store = createStore(
+  rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
-const rootreducer = combineReducers({
-    counterReducer,
-})
-
-
-export default rootreducer
+export default store;
